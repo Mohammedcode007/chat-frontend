@@ -1,14 +1,24 @@
 import { Stack } from "@mui/material";
-import { Navigate, Outlet } from "react-router-dom";
+import {  Outlet } from "react-router-dom";
 import SideBar from "./SideBar";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useState } from "react";
 
-const isAuthenticated = true
 const DashboardLayout = () => {
+  const [isAuthenticated,setisAuthenticated] = useState(false)
 
-
-  if(isAuthenticated  === true){
-<Navigate to="/auth/login" />
+  const navigate = useNavigate();
+const HandleAuth =()=>{
+  if(!isAuthenticated  ){
+    navigate('/auth/login')
+    return null
   }
+}
+useEffect(()=>{
+  HandleAuth()
+},[isAuthenticated])
+  
   return (
     <Stack
       direction={"row"}

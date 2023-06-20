@@ -58,11 +58,11 @@ const SharedMessages = () => {
                                 </Grid>
                             case 1:
                                 return Shared_links.map((el) => {
-                                    return <LinkMsg el={el} />
+                                    return <LinkMsg el={el} key={el.index} />
                                 })
                             case 2:
                                 return Shared_links.map((el) => {
-                                    return <DocMsg el={el} />
+                                    return <DocMsg el={el} key={el.index} />
                                 })
                             default:
                                 break;

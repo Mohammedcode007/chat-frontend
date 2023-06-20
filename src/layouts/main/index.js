@@ -1,8 +1,21 @@
 import { Container, Stack } from "@mui/material";
-import React from "react";
-import { Outlet } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
 import logo from "../../assets/Images/logo.ico"
 const MainLayout = () => {
+  const [isAuthenticated,setisAuthenticated] = useState(false)
+
+  const navigate = useNavigate();
+const HandleAuth =()=>{
+  if(isAuthenticated  ){
+    navigate('/auth/login')
+    return null
+  }
+}
+useEffect(()=>{
+  HandleAuth()
+},[isAuthenticated])
+  
   return (
     <>
     <Container sx={{mt:5}} maxWidth="sm">
