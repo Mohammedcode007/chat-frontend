@@ -11,6 +11,7 @@ import { Eye, EyeSlash } from 'phosphor-react';
 import { useSearchParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { NewPassword } from '../../Redux/slices/auth';
+// import { NewPassword } from '../../Redux/slices/auth';
 
 // ----------------------------------------------------------------------
 

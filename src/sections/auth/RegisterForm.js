@@ -11,6 +11,7 @@ import FormProvider, { RHFTextField } from "../../components/hook-form";
 import { Eye, EyeSlash } from "phosphor-react";
 import { useDispatch, useSelector } from "react-redux";
 import { RegisterUser } from "../../Redux/slices/auth";
+// import { RegisterUser } from "../../Redux/slices/auth";
 
 // ----------------------------------------------------------------------
 

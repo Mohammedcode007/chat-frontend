@@ -5,8 +5,9 @@ import { useForm } from "react-hook-form";
 // components
 import FormProvider, { RHFTextField } from "../../components/hook-form";
 import { useDispatch } from "react-redux";
-import { ForgotPassword } from "../../Redux/slices/auth";
+// import { ForgotPassword } from "../../Redux/slices/auth";
 import { LoadingButton } from "@mui/lab";
+import { ForgotPassword } from "../../Redux/slices/auth";
 
 // ----------------------------------------------------------------------
 

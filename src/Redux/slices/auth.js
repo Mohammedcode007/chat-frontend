@@ -102,19 +102,19 @@ export function ForgotPassword(formValues) {
       .then(function (response) {
         console.log(response);
 
-        dispatch(
-          showSnackbar({ severity: "success", message: response.data.message })
-        );
-        dispatch(
-          slice.actions.updateIsLoading({ isLoading: false, error: false })
-        );
+        // dispatch(
+        //   showSnackbar({ severity: "success", message: response.data.message })
+        // );
+        // dispatch(
+        //   slice.actions.updateIsLoading({ isLoading: false, error: false })
+        // );
       })
       .catch(function (error) {
         console.log(error);
-        dispatch(showSnackbar({ severity: "error", message: error.message }));
-        dispatch(
-          slice.actions.updateIsLoading({ isLoading: false, error: true })
-        );
+        // dispatch(showSnackbar({ severity: "error", message: error.message }));
+        // dispatch(
+        //   slice.actions.updateIsLoading({ isLoading: false, error: true })
+        // );
       });
   };
 }
@@ -166,7 +166,7 @@ export function LoginUser(formValues) {
 
 export function LogoutUser() {
   return async (dispatch, getState) => {
-    window.localStorage.removeItem("user_id");
+    // window.localStorage.removeItem("user_id");
     dispatch(slice.actions.signOut());
   };
 }
@@ -193,21 +193,23 @@ export function RegisterUser(formValues) {
           slice.actions.updateRegisterEmail({ email: formValues.email })
         );
 
-        dispatch(
-          showSnackbar({ severity: "success", message: response.data.message })
-        );
+        // dispatch(
+        //   showSnackbar({ severity: "success", message: response.data.message })
+        // );
         dispatch(
           slice.actions.updateIsLoading({ isLoading: false, error: false })
         );
       })
       .catch(function (error) {
         console.log(error);
-        dispatch(showSnackbar({ severity: "error", message: error.message }));
+        // dispatch(showSnackbar({ severity: "error", message: error.message }));
         dispatch(
           slice.actions.updateIsLoading({ error: true, isLoading: false })
         );
       })
       .finally(() => {
+        // window.location.href = "/auth/verify";
+
         if (!getState().auth.error) {
           window.location.href = "/auth/verify";
         }
@@ -233,8 +235,8 @@ export function VerifyEmail(formValues) {
       )
       .then(function (response) {
         console.log(response);
-        dispatch(slice.actions.updateRegisterEmail({ email: "" }));
-        window.localStorage.setItem("user_id", response.data.user_id);
+        // dispatch(slice.actions.updateRegisterEmail({ email: "" }));
+        // window.localStorage.setItem("user_id", response.data.user_id);
         dispatch(
           slice.actions.logIn({
             isLoggedIn: true,
@@ -243,19 +245,19 @@ export function VerifyEmail(formValues) {
         );
 
 
-        dispatch(
-          showSnackbar({ severity: "success", message: response.data.message })
-        );
-        dispatch(
-          slice.actions.updateIsLoading({ isLoading: false, error: false })
-        );
+        // dispatch(
+        //   showSnackbar({ severity: "success", message: response.data.message })
+        // );
+        // dispatch(
+        //   slice.actions.updateIsLoading({ isLoading: false, error: false })
+        // );
       })
       .catch(function (error) {
         console.log(error);
-        dispatch(showSnackbar({ severity: "error", message: error.message }));
-        dispatch(
-          slice.actions.updateIsLoading({ error: true, isLoading: false })
-        );
+        // dispatch(showSnackbar({ severity: "error", message: error.message }));
+        // dispatch(
+        //   slice.actions.updateIsLoading({ error: true, isLoading: false })
+        // );
       });
   };
 }

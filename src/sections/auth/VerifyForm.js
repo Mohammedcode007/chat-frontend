@@ -46,7 +46,6 @@ export default function VerifyForm() {
 
   const onSubmit = async (data) => {
     try {
-      //   Send API Request
       dispatch(
         VerifyEmail({
           email,

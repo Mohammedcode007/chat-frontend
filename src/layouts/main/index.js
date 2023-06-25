@@ -2,19 +2,21 @@ import { Container, Stack } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import logo from "../../assets/Images/logo.ico"
+import { useSelector } from "react-redux";
 const MainLayout = () => {
-  const [isAuthenticated,setisAuthenticated] = useState(false)
+  // const [isAuthenticated,setisAuthenticated] = useState(false)
+  const { isLoggedIn } = useSelector((state) => state.auth);
 
   const navigate = useNavigate();
 const HandleAuth =()=>{
-  if(isAuthenticated  ){
+  if(isLoggedIn  ){
     navigate('/auth/login')
     return null
   }
 }
 useEffect(()=>{
   HandleAuth()
-},[isAuthenticated])
+},[isLoggedIn])
   
   return (
     <>

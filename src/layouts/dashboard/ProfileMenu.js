@@ -5,10 +5,11 @@ import { faker } from "@faker-js/faker";
 
 import { Profile_Menu } from "../../data";
 import { useDispatch, useSelector } from "react-redux";
-import { LogoutUser } from "../../Redux/slices/auth";
+// import { LogoutUser } from "../../Redux/slices/auth";
 // import { socket } from "../../socket";
 import { useNavigate } from "react-router-dom";
 import { AWS_S3_REGION, S3_BUCKET_NAME } from "../../config";
+import { LogoutUser } from "../../Redux/slices/auth";
 
 const ProfileMenu = () => {
   const {user} = useSelector((state) => state.app);
